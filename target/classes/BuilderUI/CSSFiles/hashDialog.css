@@ -1,0 +1,20 @@
+.group {
+    -fx-background-color: #006600;
+}
+
+.button {
+    -fx-background-color: #3cb371;
+    -fx-text-fill: black;
+    -fx-font-size: 10pt;
+    -fx-background-radius: 4em;
+}
+
+.button:hover {
+    -fx-background-color: #32cd32;
+}
+
+.button:disabled {
+    -fx-background-color: gray;
+    -fx-text-fill: white;
+    -fx-opacity: 0.3;
+}

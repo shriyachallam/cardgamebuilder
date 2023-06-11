@@ -1,0 +1,125 @@
+{
+  "name": "testName",
+  "rounds": [
+    {
+      "turns": [
+        {
+          "phases": [
+            {
+              "description": "Draw",
+              "playerActions": [
+                {
+                  "name": "FromHandTransfer",
+                  "params": {
+                    "groupType": "Deck"
+                  }
+                },
+                {
+                  "name": "FromHandTransfer",
+                  "params": {
+                    "groupType": "Discard"
+                  }
+                }
+              ],
+              "conditions": [],
+              "maxTransfers": 1,
+              "beforeActions": [],
+              "afterActions": []
+            },
+            {
+              "description": "Play",
+              "playerActions": [
+                {
+                  "name": "CreatePile",
+                  "params": {
+                    "groupType": "Set"
+                  }
+                },
+                {
+                  "name": "FromHandTransfer",
+                  "params": {
+                    "groupType": "Set"
+                  }
+                }
+              ],
+              "conditions": [
+                {
+                  "conditionType": "RunOrMeldCondition",
+                  "params": {
+                    "groupType": "Set"
+                  }
+                }
+              ],
+              "maxTransfers": 10,
+              "beforeActions": [],
+              "afterActions": []
+            },
+            {
+              "description": "Discard",
+              "playerActions": [
+                {
+                  "name": "CreatePile",
+                  "params": {
+                    "groupType": "Set"
+                  }
+                }
+              ],
+              "conditions": [],
+              "maxTransfers": 1,
+              "beforeActions": [],
+              "afterActions": []
+            }
+          ],
+          "beforeActions": [],
+          "afterActions": []
+        }
+      ],
+      "beforeActions": [],
+      "afterActions": []
+    }
+  ],
+  "groups": [
+    "Hand",
+    "Discard",
+    "Deck",
+    "Set"
+  ],
+  "beforeActions": [
+    {
+      "type": "InitializeDeck",
+      "parameters": {
+        "type": "GinRummy"
+      }
+    },
+    {
+      "type": "CreateDiscardPile",
+      "parameters": {}
+    },
+    {
+      "type": "CreatePlayers",
+      "parameters": {
+        "player1": "Shriya",
+        "player2": "Del",
+        "player3": "Ken"
+      }
+    },
+    {
+      "type": "CreatePlayerHandPiles",
+      "parameters": {}
+    },
+    {
+      "type": "Deal",
+      "parameters": {
+        "numToDeal": "7"
+      }
+    },
+    {
+      "type": "CreateDiscardPile",
+      "parameters": {
+        "sourceType": "Deck",
+        "destinationType": "Discard"
+      }
+    }
+  ],
+  "afterActions": []
+}

@@ -1,0 +1,656 @@
+{
+  "gameTemplate": {
+    "name": "Solitaire",
+    "groups": [],
+    "stages": [
+      {
+        "stages": [
+          {
+            "stages": [
+              {
+                "description": "Draw A Card",
+                "conditions": [
+                  {
+                    "name": "TransferAmountCondition",
+                    "parameters": {
+                      "amount": "1"
+                    }
+                  }
+                ],
+                "playerActions": [
+                  {
+                    "name": "PlayerDraw",
+                    "parameters": {
+                      "source_tag": "deck",
+                      "destination_tag": "own"
+                    }
+                  }
+                ]
+              },
+              {
+                "description": "My Phase",
+                "conditions": [
+                  {
+                    "name": "RunCondition",
+                    "parameters": {
+                      "group_tag": "set"
+                    }
+                  }
+                ],
+                "playerActions": [
+                  {
+                    "name": "PlayerTransfer",
+                    "parameters": {
+                      "source_tag": "own",
+                      "destination_tag": "set"
+                    }
+                  }
+                ]
+              }
+            ],
+            "beforeActions": [
+              {
+                "name": "CheckWinAmount",
+                "parameters": {
+                  "amount": "0"
+                }
+              }
+            ],
+            "afterActions": []
+          }
+        ],
+        "beforeActions": [],
+        "afterActions": []
+      }
+    ],
+    "beforeActions": [
+      {
+        "name": "CreateGroup",
+        "parameters": {
+          "view_type": "stack",
+          "group_tag": "deck",
+          "direction": "face_down"
+        }
+      },
+      {
+        "name": "PlaceDeck",
+        "parameters": {
+          "group_tag": "deck"
+        }
+      },
+      {
+        "name": "Shuffle",
+        "parameters": {
+          "group_tag": "deck"
+        }
+      },
+      {
+        "name": "CreateGroup",
+        "parameters": {
+          "view_type": "sequence",
+          "group_tag": "set",
+          "direction": "face_up"
+        }
+      },
+      {
+        "name": "CreateGroup",
+        "parameters": {
+          "view_type": "sequence",
+          "group_tag": "set",
+          "direction": "face_up"
+        }
+      },
+      {
+        "name": "CreateGroup",
+        "parameters": {
+          "view_type": "sequence",
+          "group_tag": "set",
+          "direction": "face_up"
+        }
+      },
+      {
+        "name": "CreateGroup",
+        "parameters": {
+          "view_type": "sequence",
+          "group_tag": "set",
+          "direction": "face_up"
+        }
+      },
+      {
+        "name": "Deal",
+        "parameters": {
+          "amount": "7",
+          "source_tag": "deck"
+        }
+      }
+    ],
+    "afterActions": []
+  },
+  "players": [
+    {
+      "type": "oogasalad.runner.model.player.ConcretePlayer",
+      "data": {
+        "name": "Player 1",
+        "hand": {
+          "type": "oogasalad.runner.model.card.group.ConcreteCardGroup",
+          "data": {
+            "tag": "hand",
+            "viewType": "SEQUENCE",
+            "direction": "FACE_UP",
+            "selected": false,
+            "id": 2027689209,
+            "cards": [
+              {
+                "type": "oogasalad.runner.model.card.StandardCard",
+                "data": {
+                  "suit": "CLUB",
+                  "value": "EIGHT",
+                  "selected": false
+                }
+              },
+              {
+                "type": "oogasalad.runner.model.card.StandardCard",
+                "data": {
+                  "suit": "SPADE",
+                  "value": "FOUR",
+                  "selected": false
+                }
+              },
+              {
+                "type": "oogasalad.runner.model.card.StandardCard",
+                "data": {
+                  "suit": "SPADE",
+                  "value": "TEN",
+                  "selected": false
+                }
+              },
+              {
+                "type": "oogasalad.runner.model.card.StandardCard",
+                "data": {
+                  "suit": "CLUB",
+                  "value": "QUEEN",
+                  "selected": false
+                }
+              },
+              {
+                "type": "oogasalad.runner.model.card.StandardCard",
+                "data": {
+                  "suit": "HEART",
+                  "value": "QUEEN",
+                  "selected": false
+                }
+              }
+            ]
+          }
+        },
+        "isWinner": false,
+        "points": 0,
+        "isActive": true,
+        "id": 1638422100,
+        "iconId": 4
+      }
+    },
+    {
+      "type": "oogasalad.runner.model.player.ConcretePlayer",
+      "data": {
+        "name": "Player 2",
+        "hand": {
+          "type": "oogasalad.runner.model.card.group.ConcreteCardGroup",
+          "data": {
+            "tag": "hand",
+            "viewType": "SEQUENCE",
+            "direction": "FACE_UP",
+            "selected": false,
+            "id": 1191862208,
+            "cards": [
+              {
+                "type": "oogasalad.runner.model.card.StandardCard",
+                "data": {
+                  "suit": "CLUB",
+                  "value": "SIX",
+                  "selected": false
+                }
+              },
+              {
+                "type": "oogasalad.runner.model.card.StandardCard",
+                "data": {
+                  "suit": "SPADE",
+                  "value": "JACK",
+                  "selected": false
+                }
+              },
+              {
+                "type": "oogasalad.runner.model.card.StandardCard",
+                "data": {
+                  "suit": "SPADE",
+                  "value": "NINE",
+                  "selected": false
+                }
+              },
+              {
+                "type": "oogasalad.runner.model.card.StandardCard",
+                "data": {
+                  "suit": "SPADE",
+                  "value": "QUEEN",
+                  "selected": false
+                }
+              },
+              {
+                "type": "oogasalad.runner.model.card.StandardCard",
+                "data": {
+                  "suit": "CLUB",
+                  "value": "TEN",
+                  "selected": false
+                }
+              },
+              {
+                "type": "oogasalad.runner.model.card.StandardCard",
+                "data": {
+                  "suit": "CLUB",
+                  "value": "FOUR",
+                  "selected": false
+                }
+              },
+              {
+                "type": "oogasalad.runner.model.card.StandardCard",
+                "data": {
+                  "suit": "DIAMOND",
+                  "value": "TEN",
+                  "selected": false
+                }
+              }
+            ]
+          }
+        },
+        "isWinner": false,
+        "points": 0,
+        "isActive": false,
+        "id": 1681111939,
+        "iconId": 6
+      }
+    }
+  ],
+  "groups": [
+    {
+      "type": "oogasalad.runner.model.card.group.ConcreteCardGroup",
+      "data": {
+        "tag": "set",
+        "viewType": "SEQUENCE",
+        "direction": "FACE_UP",
+        "selected": false,
+        "id": 1554930815,
+        "cards": [
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "CLUB",
+              "value": "ACE",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "CLUB",
+              "value": "TWO",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "CLUB",
+              "value": "THREE",
+              "selected": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "oogasalad.runner.model.card.group.ConcreteCardGroup",
+      "data": {
+        "tag": "set",
+        "viewType": "SEQUENCE",
+        "direction": "FACE_UP",
+        "selected": false,
+        "id": 1457094683,
+        "cards": [
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "DIAMOND",
+              "value": "ACE",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "DIAMOND",
+              "value": "TWO",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "DIAMOND",
+              "value": "THREE",
+              "selected": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "oogasalad.runner.model.card.group.ConcreteCardGroup",
+      "data": {
+        "tag": "deck",
+        "viewType": "STACK",
+        "direction": "FACE_DOWN",
+        "selected": false,
+        "id": 1563710525,
+        "cards": [
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "CLUB",
+              "value": "KING",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "CLUB",
+              "value": "FIVE",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "DIAMOND",
+              "value": "SIX",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "HEART",
+              "value": "TEN",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "HEART",
+              "value": "FOUR",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "HEART",
+              "value": "KING",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "CLUB",
+              "value": "NINE",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "SPADE",
+              "value": "SEVEN",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "SPADE",
+              "value": "SIX",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "DIAMOND",
+              "value": "FOUR",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "SPADE",
+              "value": "FIVE",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "DIAMOND",
+              "value": "KING",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "HEART",
+              "value": "SIX",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "HEART",
+              "value": "SEVEN",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "DIAMOND",
+              "value": "NINE",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "HEART",
+              "value": "FIVE",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "DIAMOND",
+              "value": "QUEEN",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "SPADE",
+              "value": "EIGHT",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "HEART",
+              "value": "JACK",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "HEART",
+              "value": "EIGHT",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "DIAMOND",
+              "value": "JACK",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "DIAMOND",
+              "value": "SEVEN",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "CLUB",
+              "value": "JACK",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "DIAMOND",
+              "value": "EIGHT",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "DIAMOND",
+              "value": "FIVE",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "HEART",
+              "value": "NINE",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "CLUB",
+              "value": "SEVEN",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "SPADE",
+              "value": "KING",
+              "selected": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "oogasalad.runner.model.card.group.ConcreteCardGroup",
+      "data": {
+        "tag": "set",
+        "viewType": "SEQUENCE",
+        "direction": "FACE_UP",
+        "selected": false,
+        "id": 55625193,
+        "cards": [
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "HEART",
+              "value": "ACE",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "HEART",
+              "value": "TWO",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "HEART",
+              "value": "THREE",
+              "selected": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "oogasalad.runner.model.card.group.ConcreteCardGroup",
+      "data": {
+        "tag": "set",
+        "viewType": "SEQUENCE",
+        "direction": "FACE_UP",
+        "selected": false,
+        "id": 216642851,
+        "cards": [
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "SPADE",
+              "value": "ACE",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "SPADE",
+              "value": "TWO",
+              "selected": false
+            }
+          },
+          {
+            "type": "oogasalad.runner.model.card.StandardCard",
+            "data": {
+              "suit": "SPADE",
+              "value": "THREE",
+              "selected": false
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "stepCounter": 1
+}

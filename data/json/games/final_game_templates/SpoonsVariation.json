@@ -1,0 +1,151 @@
+{
+  "name": "Spoons",
+  "groups": [],
+  "stages": [
+    {
+      "stages": [
+        {
+          "stages": [
+            {
+              "description": "Draw",
+              "conditions": [
+                {
+                  "name": "TransferAmountCondition",
+                  "parameters": {
+                    "amount": "2"
+                  }
+                }
+              ],
+              "playerActions": [
+                {
+                  "name": "PlayerDraw",
+                  "parameters": {
+                    "source_tag": "transfer",
+                    "destination_tag": "own"
+                  }
+                }
+              ]
+            },
+            {
+              "description": "Check",
+              "conditions": [
+                {
+                  "name": "MeldCondition",
+                  "parameters": {
+                    "group_tag": "check"
+                  }
+                }
+              ],
+              "playerActions": [
+                {
+                  "name": "CreateGroup",
+                  "parameters": {
+                    "view_type": "sequence",
+                    "group_tag": "check",
+                    "direction": "face_up"
+                  }
+                },
+                {
+                  "name": "PlayerTransfer",
+                  "parameters": {
+                    "source_tag": "own",
+                    "destination_tag": "check"
+                  }
+                }
+              ]
+            },
+            {
+              "description": "Finish",
+              "conditions": [
+                {
+                  "name": "TransferAmountCondition",
+                  "parameters": {
+                    "amount": "2"
+                  }
+                }
+              ],
+              "playerActions": [
+                {
+                  "name": "PlayerTransfer",
+                  "parameters": {
+                    "source_tag": "own",
+                    "destination_tag": "transfer"
+                  }
+                }
+              ]
+            }
+          ],
+          "beforeActions": [
+            {
+              "name": "CheckWinAmount",
+              "parameters": {
+                "amount": "0"
+              }
+            }
+          ],
+          "afterActions": []
+        }
+      ],
+      "beforeActions": [
+        {
+          "name": "Transfer",
+          "parameters": {
+            "amount": "2",
+            "source_tag": "deck",
+            "destination_tag": "transfer"
+          }
+        }
+      ],
+      "afterActions": [
+        {
+          "name": "Transfer",
+          "parameters": {
+            "amount": "2",
+            "source_tag": "transfer",
+            "destination_tag": "discard"
+          }
+        }
+      ]
+    }
+  ],
+  "beforeActions": [
+    {
+      "name": "CreateGroup",
+      "parameters": {
+        "view_type": "stack",
+        "group_tag": "deck",
+        "direction": "face_down"
+      }
+    },
+    {
+      "name": "PlaceDeck",
+      "parameters": {
+        "group_tag": "deck"
+      }
+    },
+    {
+      "name": "CreateGroup",
+      "parameters": {
+        "view_type": "stack",
+        "group_tag": "transfer",
+        "direction": "face_down"
+      }
+    },
+    {
+      "name": "CreateGroup",
+      "parameters": {
+        "view_type": "sequence",
+        "group_tag": "discard",
+        "direction": "face_up"
+      }
+    },
+    {
+      "name": "Deal",
+      "parameters": {
+        "amount": "3",
+        "source_tag": "deck"
+      }
+    }
+  ],
+  "afterActions": []
+}

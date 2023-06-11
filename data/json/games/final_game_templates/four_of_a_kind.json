@@ -1,0 +1,133 @@
+{
+  "name": "four_of_a_kind",
+  "stages": [
+    {
+      "stages": [
+        {
+          "stages": [
+            {
+              "description": "Draw",
+              "conditions": [
+                {
+                  "name": "MeldCondition",
+                  "parameters": {
+                    "group_tag": "set"
+                  }
+                }
+              ],
+              "playerActions": [
+                {
+                  "name": "Swap",
+                  "parameters": {
+                    "group_one_tag": "own",
+                    "group_two_tag": "play"
+                  }
+                },
+                {
+                  "name": "PlayerTransfer",
+                  "parameters": {
+                    "source_tag": "own",
+                    "destination_tag": "set"
+                  }
+                },
+                {
+                  "name": "CreateGroup",
+                  "parameters": {
+                    "group_tag": "set",
+                    "view_type": "sequence",
+                    "direction": "face_up"
+                  }
+                }
+              ]
+            }
+          ],
+          "beforeActions": [],
+          "afterActions": [
+            {
+              "name": "CheckWinAmount",
+              "parameters": {
+                "amount": "0"
+              }
+            }
+          ]
+        }
+      ],
+      "beforeActions": [],
+      "afterActions": []
+    }
+  ],
+  "beforeActions": [
+    {
+      "name": "CreateGroup",
+      "parameters": {
+        "group_tag": "Deck",
+        "view_type": "stack",
+        "direction": "face_down"
+      }
+    },
+    {
+      "name": "CreateGroup",
+      "parameters": {
+        "group_tag": "play",
+        "view_type": "stack",
+        "direction": "face_up"
+      }
+    },
+    {
+      "name": "CreateGroup",
+      "parameters": {
+        "group_tag": "play",
+        "view_type": "stack",
+        "direction": "face_up"
+      }
+    },
+    {
+      "name": "CreateGroup",
+      "parameters": {
+        "group_tag": "play",
+        "view_type": "stack",
+        "direction": "face_up"
+      }
+    },
+    {
+      "name": "CreateGroup",
+      "parameters": {
+        "group_tag": "play",
+        "view_type": "stack",
+        "direction": "face_up"
+      }
+    },
+    {
+      "name": "PlaceDeck",
+      "parameters": {
+        "group_tag": "deck"
+      }
+    },
+    {
+      "name": "Shuffle",
+      "parameters": {
+        "group_tag": "deck"
+      }
+    },
+    {
+      "name": "Transfer",
+      "parameters": {
+        "amount": "1",
+        "source_tag": "deck",
+        "destination_tag": "play"
+
+      }
+    },
+    {
+      "name": "Deal",
+      "parameters": {
+        "amount": "48",
+        "source_tag": "deck"
+      }
+    }
+  ],
+  "afterActions": []
+}
+
+
+

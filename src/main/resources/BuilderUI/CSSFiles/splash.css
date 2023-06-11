@@ -1,0 +1,20 @@
+.root{
+    -fx-alignment: CENTER;
+    -fx-padding: 15 15 15 15;
+    -fx-background: #006600
+}
+
+#MainTitle{
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+    -fx-font: 100px broadway;
+    -fx-alignment: center;
+}
+
+.box{
+    -fx-spacing: 40;
+}
+#runHomeTitle{
+    -fx-font: 20px georgia;
+    -fx-text-fill: #000000;
+}

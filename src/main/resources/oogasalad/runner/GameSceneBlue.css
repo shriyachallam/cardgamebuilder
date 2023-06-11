@@ -1,0 +1,99 @@
+#topBar {
+  -fx-min-height: 50px;
+  -fx-max-height: 50px;
+  -fx-background-color: #7cb6c9;
+  -fx-min-width: 1000px;
+  -fx-alignment: center-right;
+
+}
+.scroll-pane{
+  -fx-min-width: 250px;
+  -fx-min-height: 250px;
+  -fx-alignment: center;
+}
+.scroll-pane > .viewport {
+  -fx-max-height: 50px;
+  -fx-background-color: #7bc9c6;
+}
+
+#playerPane {
+  -fx-background-color: #7cb6c9;
+  -fx-alignment: top-center;
+  -fx-min-height: 250px;
+  -fx-max-height: 1000px;
+}
+
+#rightPane {
+  -fx-background-color: #7bc9c6;
+  -fx-alignment: top-center;
+  -fx-max-width: 250px;
+  -fx-spacing: 10px;
+}
+
+#boardPane {
+  -fx-background-color: #1a4768;
+  -fx-alignment: bottom-center;
+}
+
+
+#actionButtonPanel {
+  -fx-alignment: center;
+  -fx-spacing: 10px;
+  -fx-end-margin: 10px;
+}
+#actionButtonBox {
+  -fx-alignment: center;
+  -fx-spacing: 10px;
+  -fx-end-margin: 10px;
+}
+
+.button {
+  -fx-background-color:#7cb6c9;
+  -fx-background-radius: 5px;
+  -fx-padding: 10px;
+  -fx-background-insets: 5px;
+  -fx-border-insets: 5px;
+  -fx-text-fill: black;
+  -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+#card-container {
+  -fx-alignment: top-center;
+  -fx-spacing: 10px;
+  -fx-padding: 0px 0px 10px 10px;
+}
+
+#card-container .label{
+  -fx-font-size: 15px;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+}
+
+.card-group {
+  -fx-padding-left: 20px;
+  -fx-padding-right: 20px;
+}
+
+#assistPane {
+  -fx-spacing: 10px;
+  -fx-padding: 10px;
+  -fx-alignment: bottom-right;
+}
+.selected-card {
+  -fx-effect: dropshadow(gaussian, blue, 10, 0, 0, 0.8);
+}
+
+.selected-group {
+  -fx-effect: dropshadow(gaussian, orangered, 20, 0, 0, 0.8);
+}
+
+#actionPanel {
+  -fx-alignment: center;
+  -fx-spacing: 10px;
+}
+
+#playerTransitionPane {
+  -fx-alignment: center;
+  -fx-spacing: 10px;
+  -fx-background-color: #7bc9c2;
+}

@@ -1,0 +1,49 @@
+{
+  "name": "MyGame",
+  "rounds": [
+    {
+      "turns": [
+        {
+          "phases": [
+            {
+              "description": "myfirstpase",
+              "playerActions": [
+                {
+                  "name": "skugh",
+                  "params": {
+                    "efw": "2354"
+                  }
+                }
+              ],
+              "conditions": [],
+              "maxTransfers": 2,
+              "beforeActions": [
+                {
+                  "type": "None",
+                  "parameters": {}
+                }
+              ],
+              "afterActions": [
+                {
+                  "type": "None",
+                  "parameters": {}
+                }
+              ]
+            }
+          ],
+          "beforeActions": [],
+          "afterActions": []
+        }
+      ],
+      "beforeActions": [],
+      "afterActions": []
+    }
+  ],
+  "groups": [
+    "Hand",
+    "Discard",
+    "Deck"
+  ],
+  "beforeActions": [],
+  "afterActions": []
+}

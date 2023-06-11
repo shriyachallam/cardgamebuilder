@@ -1,0 +1,114 @@
+{
+  "category": "conditions",
+  "options": [
+    {
+      "optionName": "GroupEmpty",
+      "classpath": "oogasalad.runner.condition.EmptyCondition",
+      "parameterList": [
+        {
+          "parameterName": "group_tag",
+          "expectedClassType": "String"
+        }
+      ]
+    },
+    {
+      "optionName": "MeldCondition",
+      "classpath": "oogasalad.runner.condition.MeldCondition",
+      "parameterList": [
+        {
+          "parameterName": "group_tag",
+          "expectedClassType": "String"
+        }
+      ]
+    },
+    {
+      "optionName": "OrFlagCondition",
+      "classpath": "oogasalad.runner.condition.OrFlagCondition",
+      "parameterList": [
+        {
+          "parameterName": "group_tag",
+          "expectedClassType": "String"        }
+      ]
+    },
+    {
+      "optionName": "RunCondition",
+      "classpath": "oogasalad.runner.condition.RunCondition",
+      "parameterList": [
+        {
+          "parameterName": "group_tag",
+          "expectedClassType": "String"
+        }
+      ]
+    },
+    {
+      "optionName": "RunOrMeldCondition",
+      "classpath": "oogasalad.runner.condition.RunOrMeldCondition",
+      "parameterList": [
+        {
+          "parameterName": "group_tag",
+          "expectedClassType": "String"
+        }
+      ]
+    },
+    {
+      "optionName": "OddRunCondition",
+      "classpath": "oogasalad.runner.condition.OddRunCondition",
+      "parameterList": [
+        {
+          "parameterName": "group_tag",
+          "expectedClassType": "String"
+        }
+      ]
+    },
+    {
+      "optionName": "EvenRunCondition",
+      "classpath": "oogasalad.runner.condition.EvenRunCondition",
+      "parameterList": [
+        {
+          "parameterName": "group_tag",
+          "expectedClassType": "String"
+        }
+      ]
+    },
+    {
+      "optionName": "OddEvenRunCondition",
+      "classpath": "oogasalad.runner.condition.OddRunCondition",
+      "parameterList": [
+        {
+          "parameterName": "group_tag",
+          "expectedClassType": "String"
+        }
+      ]
+    },
+    {
+      "optionName": "TransferAmountCondition",
+      "classpath": "oogasalad.runner.condition.TransferAmountCondition",
+      "parameterList": [
+        {
+          "parameterName": "amount",
+          "expectedClassType": "Integer"
+        }
+      ]
+    },
+    {
+      "optionName": "SuitCondition",
+      "classpath": "oogasalad.runner.condition.SuitCondition",
+      "parameterList": [
+        {
+          "parameterName": "group_tag",
+          "expectedClassType": "String"
+        }
+      ]
+    },
+    {
+      "optionName": "ValueCondition",
+      "classpath": "oogasalad.runner.condition.ValueCondition",
+      "parameterList": [
+        {
+          "parameterName": "group_tag",
+          "expectedClassType": "String"
+        }
+      ]
+    }
+  ]
+}

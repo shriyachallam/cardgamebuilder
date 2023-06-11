@@ -1,0 +1,65 @@
+{
+  "category": "player_actions",
+  "options": [
+    {
+      "optionName": "PlayerDraw",
+      "classpath": "oogasalad.runner.model.action.player.PlayerDraw",
+      "parameterList": [
+        {
+          "parameterName": "source_tag",
+          "expectedClassType": "String"
+        },
+        {
+          "parameterName": "destination_tag",
+          "expectedClassType": "String"
+        }
+      ]
+    },
+    {
+      "optionName": "PlayerTransfer",
+      "classpath": "oogasalad.runner.model.action.player.PlayerTransfer",
+      "parameterList": [
+        {
+          "parameterName": "source_tag",
+          "expectedClassType": "String"
+        },
+        {
+          "parameterName": "destination_tag",
+          "expectedClassType": "String"
+        }
+      ]
+    },
+    {
+      "optionName": "CreateGroup",
+      "classpath": "oogasalad.runner.model.action.CreateGroup",
+      "parameterList": [
+        {
+          "parameterName": "group_tag",
+          "expectedClassType": "String"
+        },
+        {
+          "parameterName": "view_type",
+          "expectedClassType": "String"
+        },
+        {
+          "parameterName": "direction",
+          "expectedClassType": "String"
+        }
+      ]
+    },
+    {
+      "optionName": "Swap",
+      "classpath": "oogasalad.runner.model.action.player.Swap",
+      "parameterList": [
+        {
+          "parameterName": "group_one_tag",
+          "expectedClassType": "String"
+        },
+        {
+          "parameterName": "group_two_tag",
+          "expectedClassType": "String"
+        }
+      ]
+    }
+  ]
+}

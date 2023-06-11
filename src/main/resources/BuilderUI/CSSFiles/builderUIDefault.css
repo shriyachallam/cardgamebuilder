@@ -1,0 +1,53 @@
+.root {
+    -fx-background: #006600;
+}
+
+.label {
+    -fx-text-fill: black;
+    -fx-font-family: 'Courier New', sans-serif;
+    -fx-font-size: 25px;
+    -fx-font-weight: normal;
+}
+
+#title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.vbox {
+    -fx-text-fill: black;
+    /*-fx-border-color: red;*/
+    /*-fx-border-width: 2px;*/
+}
+
+#compActionsComplete {
+    -fx-font-size: 22px;
+    -fx-font-weight: normal;
+}
+
+.button {
+    -fx-background-color: #3cb371;
+    -fx-text-fill: black;
+    -fx-font-size: 10pt;
+    -fx-background-radius: 5em;
+}
+
+.button:hover {
+    -fx-background-color: #32cd32;
+}
+
+.button:disabled {
+    -fx-background-color: gray;
+    -fx-text-fill: white;
+    -fx-opacity: 0.5;
+}
+
+#incompleteLabel{
+    -fx-font-family: 'SystemDefaultFont', sans-serif;
+    -fx-background-color: #ff9999;
+    -fx-text-fill: black;
+    -fx-font-size: 9pt;
+    -fx-padding: 4px;
+    -fx-background-radius: 5px;
+    -fx-font-weight: normal;
+}

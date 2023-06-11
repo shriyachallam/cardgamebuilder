@@ -1,0 +1,33 @@
+.root {
+    -fx-padding: 10 10 0 10;
+    -fx-background: #006600;
+}
+
+.label {
+    -fx-text-fill: black;
+    -fx-font-size: 15px;
+}
+
+.combo-box {
+    -fx-pref-width: 100;
+    /* -fx-background-color: #29A82A; */
+}
+
+.combo-box-popup > .list-view {
+    -fx-pref-width: 100;
+}
+
+.button {
+    /* -fx-background-color: #29A82A; */
+    -fx-text-fill: #000000;
+}
+
+.box {
+    -fx-spacing: 10;
+    -fx-alignment: top-left;
+}
+
+.error {
+    -fx-text-fill: red;
+}
+

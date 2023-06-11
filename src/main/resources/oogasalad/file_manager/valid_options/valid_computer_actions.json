@@ -1,0 +1,124 @@
+{
+  "category": "computer_actions",
+  "options": [
+    {
+      "optionName": "CreateGroup",
+      "classpath": "oogasalad.runner.model.action.CreateGroup",
+      "parameterList": [
+        {
+          "parameterName": "group_tag",
+          "expectedClassType": "String"
+        },
+        {
+          "parameterName": "view_type",
+          "expectedClassType": "String"
+        },
+        {
+          "parameterName": "direction",
+          "expectedClassType": "String"
+        }
+      ]
+    },
+    {
+      "optionName": "CheckWinAmount",
+      "classpath": "oogasalad.runner.model.action.computer.CheckWinAmount",
+      "parameterList": [
+        {
+          "parameterName": "amount",
+          "expectedClassType": "Integer"
+        }
+      ]
+    },    {
+      "optionName": "CheckWinScore",
+      "classpath": "oogasalad.runner.model.action.computer.CheckWinScore",
+      "parameterList": [
+        {
+          "parameterName": "score",
+          "expectedClassType": "Integer"
+        }
+      ]
+    },
+    {
+      "optionName": "PlaceDeck",
+      "classpath": "oogasalad.runner.model.action.computer.PlaceDeck",
+      "parameterList": [
+        {
+          "parameterName": "group_tag",
+          "expectedClassType": "String"
+        }
+      ]
+    },
+    {
+      "optionName": "CreatePlayer",
+      "classpath": "oogasalad.runner.model.action.computer.CreatePlayer",
+      "parameterList": [
+        {
+          "parameterName": "name",
+          "expectedClassType": "String"
+        }
+      ]
+    },
+    {
+      "optionName": "Transfer",
+      "classpath": "oogasalad.runner.model.action.computer.Transfer",
+      "parameterList": [
+        {
+          "parameterName": "amount",
+          "expectedClassType": "Integer"
+        },
+        {
+          "parameterName": "source_tag",
+          "expectedClassType": "String"
+        },
+        {
+          "parameterName": "destination_tag",
+          "expectedClassType": "String"
+        }
+      ]
+    },
+    {
+      "optionName": "Deal",
+      "classpath": "oogasalad.runner.model.action.computer.Deal",
+      "parameterList": [
+        {
+          "parameterName": "amount",
+          "expectedClassType": "Integer"
+        },
+        {
+          "parameterName": "source_tag",
+          "expectedClassType": "String"
+        }
+      ]
+    },
+    {
+      "optionName": "Shuffle",
+      "classpath": "oogasalad.runner.model.action.computer.Shuffle",
+      "parameterList": [
+        {
+          "parameterName": "group_tag",
+          "expectedClassType": "String"
+        }
+      ]
+    },
+    {
+      "optionName": "RandomRemove",
+      "classpath": "oogasalad.runner.model.action.computer.RandomRemove",
+      "parameterList": [
+        {
+          "parameterName": "amount",
+          "expectedClassType": "Integer"
+        }
+      ]
+    },
+    {
+      "optionName": "RotateHand",
+      "classpath": "oogasalad.runner.model.action.computer.RotateHand",
+      "parameterList": [
+        {
+          "parameterName": "amount",
+          "expectedClassType": "Integer"
+        }
+      ]
+    }
+  ]
+}

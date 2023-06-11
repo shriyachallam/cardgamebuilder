@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oogasalad.Main">
+   <children>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="sidebar" stylesheets="@style.css">
+         <children>
+            <ImageView fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@HouseOfCards.jpg" />
+               </image>
+            </ImageView>
+            <Label text="Welcome To">
+               <font>
+                  <Font name="Impact" size="25.0" />
+               </font>
+            </Label>
+            <Label text="The House Of Cards">
+               <font>
+                  <Font name="Impact" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Pane layoutX="400.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0">
+         <children>
+            <Label layoutX="42.0" layoutY="106.0" text="Welcome Back,">
+               <font>
+                  <Font name="Impact" size="25.0" />
+               </font>
+            </Label>
+            <TextField fx:id="account" layoutX="64.0" layoutY="236.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefColumnCount="0" prefHeight="40.0" prefWidth="250.0" promptText="Email">
+               <font>
+                  <Font name="Impact" size="13.0" />
+               </font></TextField>
+            <PasswordField fx:id="password" layoutX="64.0" layoutY="295.0" prefHeight="40.0" prefWidth="250.0" promptText="Password" stylesheets="@style.css">
+               <font>
+                  <Font name="Impact" size="13.0" />
+               </font></PasswordField>
+            <Label layoutX="225.0" layoutY="348.0" text="Forget Password" textFill="#a3a3a3">
+               <font>
+                  <Font name="Impact" size="12.0" />
+               </font>
+            </Label>
+            <Button layoutX="65.0" layoutY="397.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="48.0" prefWidth="250.0" styleClass="loginBtn" stylesheets="@style.css" text="Login">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="42.0" layoutY="144.0" text=" Sign in to Continue" textFill="#a3a3a3">
+               <font>
+                  <Font name="Impact" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="131.0" layoutY="461.0" text="New User? " textFill="#a3a3a3">
+               <font>
+                  <Font name="Impact" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="200.0" layoutY="461.0" onMouseClicked="#userRegistration" text="Sign Up" textFill="#6747cd">
+               <font>
+                  <Font name="Impact" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

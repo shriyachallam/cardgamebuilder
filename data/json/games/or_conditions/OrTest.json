@@ -1,0 +1,1 @@
+{"name":"OrTest","groups":[],"stages":[{"stages":[{"stages":[{"description":"test","conditions":[{"name":"OrFlagCondition","parameters":{"group_tag":"a"}}],"playerActions":[]}],"beforeActions":[],"afterActions":[]}],"beforeActions":[],"afterActions":[]}],"beforeActions":[],"afterActions":[]}

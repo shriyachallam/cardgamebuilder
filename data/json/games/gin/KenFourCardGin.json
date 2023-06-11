@@ -1,0 +1,133 @@
+{
+  "name": "GinTest",
+  "groups": [],
+  "stages": [
+    {
+      "stages": [
+        {
+          "stages": [
+            {
+              "description": "Draw",
+              "conditions": [
+                {
+                  "name": "TransferAmountCondition",
+                  "parameters": {
+                    "amount": "1"
+                  }
+                }
+              ],
+              "playerActions": [
+                {
+                  "name": "PlayerDraw",
+                  "parameters": {
+                    "source_tag": "deck",
+                    "destination_tag": "own"
+                  }
+                },
+                {
+                  "name": "PlayerDraw",
+                  "parameters": {
+                    "source_tag": "discard",
+                    "destination_tag": "own"
+                  }
+                }
+              ]
+            },
+            {
+              "description": "Discard",
+              "conditions": [
+                {
+                  "name": "RunOrMeldCondition",
+                  "parameters": {
+                    "group_tag": "set"
+                  }
+                }
+              ],
+              "playerActions": [
+                {
+                  "name": "PlayerTransfer",
+                  "parameters": {
+                    "source_tag": "own",
+                    "destination_tag": "discard"
+                  }
+                },
+                {
+                  "name": "CreateGroup",
+                  "parameters": {
+                    "view_type": "sequence",
+                    "group_tag": "set",
+                    "direction": "face_up"
+                  }
+                },
+                {
+                  "name": "PlayerTransfer",
+                  "parameters": {
+                    "source_tag": "own",
+                    "destination_tag": "set"
+                  }
+                }
+              ]
+            }
+          ],
+          "beforeActions": [
+            {
+              "name": "CheckWinAmount",
+              "parameters": {
+                "amount": "1"
+              }
+            }
+          ],
+          "afterActions": []
+        }
+      ],
+      "beforeActions": [],
+      "afterActions": []
+    }
+  ],
+  "beforeActions": [
+    {
+      "name": "CreateGroup",
+      "parameters": {
+        "view_type": "stack",
+        "group_tag": "deck",
+        "direction": "face_down"
+      }
+    },
+    {
+      "name": "PlaceDeck",
+      "parameters": {
+        "group_tag": "deck"
+      }
+    },
+    {
+      "name": "Shuffle",
+      "parameters": {
+        "group_tag": "deck"
+      }
+    },
+    {
+      "name": "CreateGroup",
+      "parameters": {
+        "view_type": "stack",
+        "group_tag": "discard",
+        "direction": "face_up"
+      }
+    },
+    {
+      "name": "Deal",
+      "parameters": {
+        "amount": "3",
+        "source_tag": "deck"
+      }
+    },
+    {
+      "name": "Transfer",
+      "parameters": {
+        "amount": "1",
+        "source_tag": "deck",
+        "destination_tag": "discard"
+      }
+    }
+  ],
+  "afterActions": []
+}

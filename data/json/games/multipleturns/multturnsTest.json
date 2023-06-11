@@ -1,0 +1,97 @@
+{
+  "name": "multturnsTest",
+  "groups": [],
+  "stages": [
+    {
+      "stages": [
+        {
+          "stages": [
+            {
+              "description": "Draw",
+              "conditions": [],
+              "playerActions": [
+                {
+                  "name": "PlayerDraw",
+                  "parameters": {
+                    "source_tag": "deck",
+                    "destination_tag": "own"
+                  }
+                },
+                {
+                  "name": "PlayerTransfer",
+                  "parameters": {
+                    "source_tag": "own",
+                    "destination_tag": "set"
+                  }
+                },
+                {
+                  "name": "CreateGroup",
+                  "parameters": {
+                    "view_type": "sequence",
+                    "group_tag": "set",
+                    "direction": "face_up"
+                  }
+                }
+              ]
+            }
+          ],
+          "beforeActions": [],
+          "afterActions": [
+            {
+              "name": "CheckWinAmount",
+              "parameters": {
+                "amount": "0"
+              }
+            }
+          ]
+        },
+        {
+          "stages": [
+            {
+              "description": "Draw more Loser",
+              "conditions": [
+              ],
+              "playerActions": [
+                {
+                  "name": "PlayerDraw",
+                  "parameters": {
+                    "source_tag": "deck",
+                    "destination_tag": "own"
+                  }
+                }
+              ]
+            }
+          ],
+          "beforeActions": [],
+          "afterActions": []
+        }
+      ],
+      "beforeActions": [],
+      "afterActions": []
+    }
+  ],
+  "beforeActions": [
+    {
+      "name": "CreateGroup",
+      "parameters": {
+        "view_type": "stack",
+        "group_tag": "deck",
+        "direction": "face_down"
+      }
+    },
+    {
+      "name": "PlaceDeck",
+      "parameters": {
+        "group_tag": "deck"
+      }
+    },
+    {
+      "name": "Deal",
+      "parameters": {
+        "amount": "1",
+        "source_tag": "deck"
+      }
+    }
+  ],
+  "afterActions": []
+}

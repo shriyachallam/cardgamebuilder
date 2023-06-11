@@ -1,0 +1,165 @@
+public GameRecord createMockGameBuilderRecord() {
+    List<RoundRecord> rounds = createRounds();
+    List<String> groups = new ArrayList<>();
+    GameRecord gameRecord = new GameRecord("BuilderParserTestStructure", null, rounds, buildBeforeGame(),
+        new ArrayList<>());
+    return gameRecord;
+  }
+
+  private ArrayList<String> createGroups() {
+    return new ArrayList<>(List.of("Hand", "Discard", "Deck", "Set"));
+  }
+
+  private List<RoundRecord> createRounds() {
+    List<TurnRecord> turnBuilders = createTurns();
+
+    // initialize rounds
+    RoundRecord roundRecord = new RoundRecord(turnBuilders,
+        new ArrayList<>(), new ArrayList<>());
+    return List.of(roundRecord);
+  }
+
+  private List<TurnRecord> createTurns() {
+    List<PhaseRecord> phases = createPhases();
+
+    List<ComputerActionRecord> afterActions = new ArrayList<>();
+
+    Map<String, String> checkWinMap = new HashMap<>();
+    checkWinMap.put("Win Condition","isEmpty");
+    ComputerActionRecord checkWin = new ComputerActionRecord("Check Winning Card Count", checkWinMap);
+    afterActions.add(checkWin);
+
+
+    TurnRecord turnBuilder = new TurnRecord(phases, new ArrayList<>(),
+        new ArrayList<>());
+    return new ArrayList<>(List.of(turnBuilder));
+  }
+
+  private ArrayList<ComputerActionRecord> buildBeforeGame() {
+    List<ComputerActionRecord> actions = new ArrayList<>();
+
+    actions.add(new ComputerActionRecord("Create Group", Map.of("Group Affiliation", "deck",
+        "Deck Style", "stack", "Visibility", "face_down")));
+
+    actions.add(new ComputerActionRecord("Place Deck", new HashMap<>() {{
+      put("Group Affiliation", "deck");
+    }}));
+
+    actions.add(new ComputerActionRecord("Create Group", Map.of("Group Affiliation", "discard",
+        "Deck Style", "stack", "Visibility", "face_up")));
+
+    actions.add(new ComputerActionRecord("Create Player", new HashMap<>() {{
+      put("Player Name", "shriya");
+    }}));
+
+    actions.add(new ComputerActionRecord("Create Player", new HashMap<>() {{
+      put("Player Name", "del");
+    }}));
+
+    actions.add(new ComputerActionRecord("Create Player", new HashMap<>() {{
+      put("Player Name","ken");
+    }}));
+
+    actions.add(new ComputerActionRecord("Transfer", new HashMap<>() {{
+      put("Source Group","deck");
+      put("Destination Group","hand");
+      put("Amount", "7");
+    }}));
+
+    actions.add(new ComputerActionRecord("Transfer", new HashMap<>() {{
+      put("Source Group","deck");
+      put("Destination Group","discard");
+      put("Amount","1");
+    }}));
+
+    return new ArrayList<>(actions);
+  }
+
+
+  private List<PhaseRecord> createPhases() {
+
+    /**
+     * Draw Phase
+     */
+    List<PlayerActionRecord> actions = new ArrayList<>();
+    Map<String, String> params = new HashMap<>();
+
+
+    params = new HashMap<>();
+    params.put("Source Group", "deck");
+    params.put("Destination Group", "own");
+    PlayerActionRecord deckToHandTransfer = new PlayerActionRecord("Player Draw", params);
+    actions.add(deckToHandTransfer);
+
+    params = new HashMap<>();
+    params.put("Source Group", "discard");
+    params.put("Destination Group", "own");
+    PlayerActionRecord discardToDeckTransfer = new PlayerActionRecord("Player Draw", params);
+    actions.add(discardToDeckTransfer);
+
+    List<ConditionRecord> conditions = new ArrayList<>();
+
+    params = new HashMap<>();
+    params.put("Amount", "1");
+    ConditionRecord transferAmountCondition = new ConditionRecord("Transfer Amount Condition", params);
+
+    PhaseRecord draw = new PhaseRecord("Draw", conditions, actions);
+
+    /**
+     * Play Phase
+     */
+
+      actions = new ArrayList<>();
+      PlayerActionRecord createPile = new PlayerActionRecord("Create Group", Map.of("Group Affiliation", "set",
+          "Deck Style", "sequence", "Visibility", "face_up"));
+      actions.add(createPile);
+
+      params = new HashMap<>();
+      params.put("Source Group", "own");
+      params.put("Destination Group", "set");
+      PlayerActionRecord transferToPile = new PlayerActionRecord("Player Transfer", params);
+      actions.add(transferToPile);
+
+      conditions = new ArrayList<>();
+      params = new HashMap<>();
+      params.put("Group Affiliation", "set");
+      ConditionRecord condition = new ConditionRecord("Group Is Run Or Meld", params);
+      conditions.add(condition);
+
+      PhaseRecord play = new PhaseRecord("Play", conditions, actions);
+
+    /**
+     * Discard Phase
+     */
+
+    actions = makeDiscardActions();
+    conditions = makeDiscardConditions();
+    PhaseRecord discard = new PhaseRecord("discard", conditions, actions);
+
+
+    return new ArrayList<>(List.of(draw, play, discard));
+
+  }
+
+  private static List<ConditionRecord> makeDiscardConditions() {
+    List<ConditionRecord> conditions;
+    Map<String, String> params;
+    conditions = new ArrayList<>();
+
+    params = new HashMap<>();
+    params.put("Amount", "1");
+    ConditionRecord discardTransferAmount = new ConditionRecord("Transfer Amount Condition", params);
+    return conditions;
+  }
+
+  private static List<PlayerActionRecord> makeDiscardActions() {
+    List<PlayerActionRecord> actions;
+    Map<String, String> params;
+    actions = new ArrayList<>();
+    params = new HashMap<>();
+    params.put("Source Group", "own");
+    params.put("Destination Group", "discard");
+    PlayerActionRecord throwAway = new PlayerActionRecord("Player Transfer", params);
+    actions.add(throwAway);
+    return actions;
+  }

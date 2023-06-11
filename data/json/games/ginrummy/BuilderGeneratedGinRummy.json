@@ -1,0 +1,100 @@
+{
+  "name": "BuilderGeneratedGinRummy",
+  "groups": [
+    "Hand",
+    "Discard",
+    "Deck",
+    "Set"
+  ],
+  "stages": [
+    {
+      "stages": [
+        {
+          "stages": [
+            {
+              "description": "Draw",
+              "conditions": [
+                {
+                  "name": "TransferAmount",
+                  "parameters": {
+                    "amount": "1"
+                  }
+                }
+              ],
+              "playerActions": [
+                {
+                  "name": "PlayerDraw",
+                  "parameters": {
+                    "source_tag": "deck",
+                    "destination_tag": "own"
+                  }
+                },
+                {
+                  "name": "PlayerTransfer",
+                  "parameters": {
+                    "source_tag": "discard",
+                    "destination_tag": "own"
+                  }
+                }
+              ]
+            },
+            {
+              "description": "Play",
+              "conditions": [
+                {
+                  "name": "RunOrMeldCondition",
+                  "parameters": {
+                    "group_tag": "set"
+                  }
+                }
+              ],
+              "playerActions": [
+                {
+                  "name": "CreateGroup",
+                  "parameters": {
+                    "view_type": "sequence",
+                    "group_tag": "set",
+                    "direction": "face_up"
+                  }
+                },
+                {
+                  "name": "PlayerTransfer",
+                  "parameters": {
+                    "source_tag": "own",
+                    "destination_tag": "set"
+                  }
+                }
+              ]
+            },
+            {
+              "description": "burn",
+              "conditions": [
+                {
+                  "name": "TransferAmount",
+                  "parameters": {
+                    "amount": "1"
+                  }
+                }
+              ],
+              "playerActions": [
+                {
+                  "name": "PlayerTransfer",
+                  "parameters": {
+                    "source_tag": "own",
+                    "destination_tag": "discard"
+                  }
+                }
+              ]
+            }
+          ],
+          "beforeActions": [],
+          "afterActions": []
+        }
+      ],
+      "beforeActions": [],
+      "afterActions": []
+    }
+  ],
+  "beforeActions": [],
+  "afterActions": []
+}

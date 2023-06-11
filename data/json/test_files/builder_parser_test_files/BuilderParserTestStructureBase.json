@@ -1,0 +1,129 @@
+{
+  "name": "BuilderParserTestStructure",
+  "stages": [
+    {
+      "stages": [
+        {
+          "stages": [
+            {
+              "description": "Draw",
+              "conditions": [],
+              "playerActions": [
+                {
+                  "name": "ToHandTransfer",
+                  "parameters": {
+                    "group_tag": "deck"
+                  }
+                },
+                {
+                  "name": "ToHandTransfer",
+                  "parameters": {
+                    "group_tag": "discard"
+                  }
+                }
+              ]
+            },
+            {
+              "description": "Play",
+              "conditions": [
+                {
+                  "name": "RunOrMeldCondition",
+                  "parameters": {
+                    "group_tag": "set"
+                  }
+                }
+              ],
+              "playerActions": [
+                {
+                  "name": "CreateGroup",
+                  "parameters": {
+                    "group_tag": "set"
+                  }
+                },
+                {
+                  "name": "FromHandTransfer",
+                  "parameters": {
+                    "group_tag": "set"
+                  }
+                }
+              ]
+            },
+            {
+              "description": "discard",
+              "conditions": [],
+              "playerActions": [
+                {
+                  "name": "FromHandTransfer",
+                  "parameters": {
+                    "group_tag": "discard"
+                  }
+                }
+              ]
+            }
+          ],
+          "beforeActions": [],
+          "afterActions": []
+        }
+      ],
+      "beforeActions": [],
+      "afterActions": []
+    }
+  ],
+  "beforeActions": [
+    {
+      "name": "CreateGroup",
+      "parameters": {
+        "group_tag": "deck"
+      }
+    },
+    {
+      "name": "PlaceDeck",
+      "parameters": {
+        "group_tag": "deck"
+      }
+    },
+    {
+      "name": "CreateGroup",
+      "parameters": {
+        "group_tag": "discard"
+      }
+    },
+    {
+      "name": "CreatePlayer",
+      "parameters": {
+        "name": "shriya"
+      }
+    },
+    {
+      "name": "CreatePlayer",
+      "parameters": {
+        "name": "del"
+      }
+    },
+    {
+      "name": "CreatePlayer",
+      "parameters": {
+        "name": "ken"
+      }
+    },
+    {
+      "name": "Transfer",
+      "parameters": {
+        "amount": "7",
+        "source_tag": "deck",
+        "destination_tag": "hand"
+      }
+    },
+    {
+      "name": "Transfer",
+      "parameters": {
+        "amount": "1",
+        "source_tag": "deck",
+        "destination_tag": "discard"
+
+      }
+    }
+  ],
+  "afterActions": []
+}
+
